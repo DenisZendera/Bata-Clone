@@ -1,0 +1,35 @@
+.search-box-container {
+  position: absolute;
+  top: 20px;
+  left: 50%;       
+  transform: translateX(-50%);
+  width: 500px;
+  max-width: 90%; 
+  display: flex;
+  align-items: center;
+  z-index: 10; 
+}
+
+.search-box {
+  flex: 1;
+  height: 36.5px;
+  padding-left: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 18.25px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.3);
+}
+
+.search-box:focus{
+  outline: 0;
+  border: 2px solid rgba(209, 3, 3,0.7); 
+}
+
+.search-box-container i {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  color: #555;
+  cursor: pointer;
+}

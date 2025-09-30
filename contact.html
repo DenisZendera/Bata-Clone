@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>
+      Bata Shoe Company
+    </title>
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="icons/bata-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/header.css">
+    <style>
+      body{
+        padding-top: 100px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-left">
+        <a href="index.html">
+          <img class="logo" src="logo/bata-logo.png">
+        </a>
+      </div>
+      <div class="header-right">
+        <button>
+          <a class="Home" href="index.html">Home</a>
+        </button>
+        <button>
+          <a class="Products" href="products.html">Products</a>
+        </button>
+        <button>
+          <a class="About" href="about.html">About Us</a>
+        </button>
+        <button>
+          <a class="Store" href="locator.html">Store Locator</a>
+        </button>
+        <button>
+          <a class="Promotions" href="promotions.html">Promotions</a>
+        </button>
+        <button>
+          
+       <div class="cart-button" style="font-size: 13.5px;">
+          <a class="Cart" href="cart.html">Cart</a>
+          <div id="cart-count" class="cart-count">0</div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <hr class="header-line">
+
+<script>
+
+
+let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+  function updateCartCount() {
+    const cartElement = document.getElementById('cart-count');
+    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartElement.textContent = totalQuantity;
+    cartElement.style.display = totalQuantity > 0 ? 'flex' : 'none';
+  }
+
+  function addToCart(event) {
+    const productElement = event.currentTarget;
+    const name = productElement.querySelector("h3").innerText;
+    const price = productElement.querySelector(".price").innerText;
+    const image = productElement.querySelector("img").src;
+
+    const existing = cart.find(item => item.name === name);
+    if (existing) {
+      existing.quantity++;
+    } else {
+      cart.push({ name, price, image, quantity: 1 });
+    }
+
+    sessionStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+  }
+
+  updateCartCount();
+
+</script>
+    
+  </body>
+</html>

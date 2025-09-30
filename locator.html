@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>
+      Bata Shoe Company
+    </title>
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="icons/bata-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Roboto, sans-serif;
+        }
+        
+        body {
+            padding-top: 100px;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        h1{
+            color: rgb(220, 6, 6);
+        }
+    
+       
+        .promo-hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .promo-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .promo-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        
+        .promotions-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #2c3e50;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #e53935;
+            border-radius: 2px;
+        }
+        
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .promo-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .promo-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .promo-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .promo-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .promo-card:hover .promo-image img {
+            transform: scale(1.1);
+        }
+        
+        .promo-content {
+            padding: 20px;
+        }
+        
+        .promo-tag {
+            display: inline-block;
+            background-color: #e53935;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .promo-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: rgb(220, 6, 6);
+        }
+        
+        .promo-date {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .promo-desc {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .promo-btn {
+            display: inline-block;
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .promo-btn:hover {
+            background-color: #1a252f;
+        }
+        
+        
+        
+        .footer {
+            background-color: #1a252f;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #e53935;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #ecf0f1;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: #e53935;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            font-size: 1.5rem;
+        }
+        
+        .copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+            
+            .header-right {
+                gap: 8px;
+            }
+            
+            .header-right button {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+            
+            .promo-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input {
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-btn {
+                border-radius: 5px;
+                padding: 15px;
+            }
+        }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-left">
+        <a href="index.html">
+          <img class="logo" src="logo/bata-logo.png">
+        </a>
+      </div>
+      <div class="header-right">
+        <button>
+          <a class="Home" href="index.html">Home</a>
+        </button>
+        <button>
+          <a class="Products" href="products.html">Products</a>
+        </button>
+        <button>
+          <a class="About" href="about.html">About Us</a>
+        </button>
+        <button>
+          <a class="Store" href="locator.html">Store Locator</a>
+        </button>
+        <button>
+          <a class="Promotions" href="promotions.html">Promotions</a>
+        </button>
+        <button>
+          <a class="Contact" href="#contact">Contact</a>
+        </button>
+       <div class="cart-button" style="font-size: 13.5px;">
+          <a class="Cart" href="cart.html">Cart</a>
+          <div id="cart-count" class="cart-count">0</div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <hr class="header-line">
+    
+    
+    <div class="promo-hero">
+        <h1>How you can find us</h1>
+        <p>We have multiple braches in Zimbabwe. Lets find one near you.</p>
+    </div>
+  
+    <div class="promotions-container">
+        <h2 class="section-title">Current Locations</h2>
+        
+        <div class="promo-grid">
+            <div class="promo-card">
+                <div class="promo-image">
+                    <img src="Locator/g.jpg">
+                </div>
+                <div class="promo-content">
+                    <h3 class="promo-title">Gweru</h3>
+                    <p class="promo-desc"> 
+                      <ul>
+                        <li>Found at Kudzanai Bus Station, Livingstone Ave, Gweru</li>
+                        <li>Open from 9am to 5pm</li>
+                      </ul>
+                      <br>
+                      <br>
+                      <br>
+                      <a href="https://maps.app.goo.gl/U9xKuVNSzYhjiKcH9">https://maps.app.goo.gl/U9xKuVNSzYhjiKcH9</a>
+                    </p>
+                    <br>
+                    <a href="#" class="promo-btn">Click the link above</a>
+                </div>
+            </div>
+            
+            <div class="promo-card">
+                <div class="promo-image">
+                    <img src="Locator/h.webp">
+                </div>
+                <div class="promo-content">
+                    <h3 class="promo-title">Harare</h3>
+                    <p class="promo-desc">
+                      <ul>
+                        <li>Found at Nelson Mandela Avenue, Harare</li>
+                        <li>Open from 8am to 4.30pm</li>
+                      </ul>
+                      <br>
+                      <br>
+                      <br>
+                      <br>
+                      <a href="https://maps.app.goo.gl/E1bKmuuFSUvzBx828">https://maps.app.goo.gl/E1bKmuuFSUvzBx828</a>
+                    </p>
+                    <br>
+                    <a href="#" class="promo-btn">Click the link above</a>
+                </div>
+            </div>
+            
+            <div class="promo-card">
+                <div class="promo-image">
+                    <img src="Locator/s.jpg">
+                </div>
+                <div class="promo-content">
+                    <h3 class="promo-title">Shurugwi</h3>
+                    <p class="promo-desc">
+                      <ul>
+                        <li>Found at A18, Shurugwi</li>
+                        <li>Open from 8am to 4.30pm</li>
+                      </ul>
+                      <br>
+                      <br>
+                      <br>
+                      <br>
+                      <a href="https://maps.app.goo.gl/aT6hPhKin9vnNyDJA">https://maps.app.goo.gl/aT6hPhKin9vnNyDJA</a>
+                    </p>
+                    <br>
+                    <a href="#" class="promo-btn">Click the link above</a>
+                </div>
+            </div>
+        </div>
+
+
+    <footer class="footer-container" id="contact" style="inherits: none;">
+        <div class="footer-section contact-info">
+            <h3>Contact</h3>
+            <p>+263 4 123 456‬ | <a href="mailto:info@bata.co.zw">info@bata.co.zw</a></p>
+        </div>
+
+        <div class="footer-section store-info">
+            <h3>Stores</h3>
+            <p>Harare | Bulawayo | Mutare</p>
+        </div>
+
+        <div class="footer-section social-info">
+            <h3>Follow</h3>
+            <div class="social-icons">
+            <a href="https://www.facebook.com/" target="_blank">
+                <img class="social-logo" src="icons/facebook-icon.webp" alt="Facebook">
+                <span>Facebook</span>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+                <img class="social-logo" src="icons/insta.jpg" alt="Instagram">
+                <span>Instagram</span>
+            </a>
+            </div>
+        </div>
+        </footer>
+
+        <div class="footer-bottom">
+        © 2025 Bata Shoe Company Zimbabwe
+        </div>
+
+<script>
+
+
+let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+  function updateCartCount() {
+    const cartElement = document.getElementById('cart-count');
+    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartElement.textContent = totalQuantity;
+    cartElement.style.display = totalQuantity > 0 ? 'flex' : 'none';
+  }
+
+  function addToCart(event) {
+    const productElement = event.currentTarget;
+    const name = productElement.querySelector("h3").innerText;
+    const price = productElement.querySelector(".price").innerText;
+    const image = productElement.querySelector("img").src;
+
+    const existing = cart.find(item => item.name === name);
+    if (existing) {
+      existing.quantity++;
+    } else {
+      cart.push({ name, price, image, quantity: 1 });
+    }
+
+    sessionStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+  }
+
+  updateCartCount();
+
+</script>  
+
+  </body>
+</html>

@@ -1,0 +1,179 @@
+body{
+  font-family: Roboto, Arial;
+  padding-top: 100px;
+}
+
+p{
+  margin-bottom: none;
+}
+
+.cookie-container{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cookie{
+  background-color: rgb(54, 45, 45);
+  color: white;
+  width: 230px;
+  height: 100px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.cookie-button{
+  column-gap: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.cookie-button button{
+  color: black;
+  inherits: 0;
+  background-color:  white;
+  transition: all 0.15s ease;
+}
+
+.cookie-button button:active{
+  background-color: black;
+  color: white;
+}
+
+.Featured-Collections {
+  margin-top: 35px;
+  margin-bottom: 50px;
+}
+
+.featured-collections-title {
+  color: rgb(209, 3, 3);
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.featured-collections-templates {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  column-gap: 10px;
+}
+
+.Women-section,
+.Men-section,
+.Kids {
+  flex: 1;
+  height: 300px;
+  width: 250px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  position: relative; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Women-section:hover,
+.Men-section:hover,
+.Kids:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3); 
+  z-index: 5; 
+}
+
+.men-image {
+  width: 100%;
+  height: 275px;
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  object-fit: cover; 
+}
+
+.collection-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  font-weight: bold;
+  padding: 10px 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: color 0.3 ease;
+}
+
+.collection-text:hover{
+  color: rgb(209, 3, 3);
+}
+
+.new-customer-section{
+  height: 150px;
+  background-color: rgba(128, 128, 128,0.1);
+}
+
+.new-customer-content{
+  padding-top: 20px;
+  padding-left: 60px;
+}
+
+.discount-text{
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 0;
+}
+
+.email-section{
+  margin-top: 15px;
+  display: flex;
+  padding-right: 35px;
+}
+
+.new-customer-searchbox{
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 6px;
+  flex: 1;
+  border: 0.3px solid rgb(221, 217, 217);
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.new-customer-searchbox:focus{
+  outline: 0;
+  border: 2px solid rgba(209, 3, 3,0.7);
+}
+
+.subscribe-button{
+  border: none;
+  background-color: rgb(207, 2, 2);
+  color: white;
+  margin-left: 10px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+
+  flex: 0 0 auto; 
+  padding: 8px 16px;
+  white-space: nowrap
+
+}
+
+.subscribe-button:active{
+  opacity: 0.6;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}

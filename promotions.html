@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bata Shoe Company - Promotions</title>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="icons/bata-icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <style>
+    body {
+      font-family: "Montserrat", sans-serif;
+      margin: 0;
+      padding-top: 100px;
+      background: #f5f5f5;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #c00;
+    }
+
+    .promotions-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .promotion {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+      position: relative;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .promotion:hover {
+      transform: scale(1.03);
+    }
+
+    .promotion img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .promotion h3 {
+      margin: 8px 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .promo-text {
+      font-size: 14px;
+      margin: 5px 0;
+      color: #666;
+    }
+
+    .discount {
+      font-size: 16px;
+      font-weight: bold;
+      color: #2e8b57;
+    }
+
+    .promo-button {
+      margin-top: 10px;
+      background: #c00;
+      color: #fff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all  0.2s  ease;
+    }
+
+    .promo-button:hover {
+      color: #a00;
+      background-color: white;
+      border: 1px solid #a00;
+    }
+
+    .promo-button:active{
+      background: #c00;
+      color: #fff;
+    }
+
+    .ribbon {
+      position: absolute;
+      top: 10px;
+      left: -10px;
+      background: #c00;
+      color: #fff;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: bold;
+      border-radius: 0 6px 6px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .ribbon.school { background: #2e8b57; }      /* Back to School */
+    .ribbon.clearance { background: #c00; }      /* Clearance */
+    .ribbon.new { background: #1e90ff; }         /* New Arrivals */
+
+    .cart-count {
+      position: absolute;
+      top: -13px;
+      right: -2px;
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      width: 14px;
+      height: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 11px;
+      font-weight: bold;
+      line-height: 1;
+      display: none;
+    }
+    .cart-button { position: relative; display: inline-block; }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <a href="index.html">
+        <img class="logo" src="logo/bata-logo.png">
+      </a>
+    </div>
+    <div class="header-right">
+      <button><a class="Home" href="index.html">Home</a></button>
+      <button><a class="Products" href="products.html">Products</a></button>
+      <button><a class="About" href="about.html">About Us</a></button>
+      <button><a class="Store" href="locator.html">Store Locator</a></button>
+      <button><a class="Promotions" href="promotions.html">Promotions</a></button>
+       <button>
+          <a class="Contact" href="#contact">Contact</a>
+        </button>
+      <button><a class="Contact" href="contact.html">Contact</a></button>
+      <div class="cart-button" style="font-size: 13.5px;">
+        <a class="Cart" href="cart.html">Cart</a>
+        <div id="cart-count" class="cart-count">0</div>
+      </div>
+    </div>
+  </div>
+  <hr class="header-line">
+
+  <!-- Title -->
+  <h1>Special Promotions & Campaigns</h1>
+
+  <!-- Promotions Grid -->
+  <div class="promotions-container">
+    <!-- Back to School -->
+    <div class="promotion" onclick="addPromotionToCart(event)">
+      <div class="ribbon school">Back to School</div>
+      <img src="product-images/toughee_shoes.jpg" alt="School Shoes">
+      <h3>School Shoes</h3>
+      <p class="promo-text">Durable shoes for every student</p>
+      <p class="discount">Now $29.99</p>
+      <button class="promo-button">Add to Cart</button>
+    </div>
+
+    <!-- Clearance Sale -->
+    <div class="promotion" onclick="addPromotionToCart(event)">
+      <div class="ribbon clearance">Clearance Sale</div>
+      <img src="product-images/jacket.jpg" alt="Denim Jacket">
+      <h3>Denim Jacket</h3>
+      <p class="promo-text">Limited stock – grab yours fast!</p>
+      <p class="discount">Now $19.99</p>
+      <button class="promo-button">Add to Cart</button>
+    </div>
+
+    <!-- New Arrival -->
+    <div class="promotion" onclick="addPromotionToCart(event)">
+      <div class="ribbon new">New Arrival</div>
+      <img src="product-images/running_shoe1.jpg" alt="Running Shoes">
+      <h3>Running Shoes</h3>
+      <p class="promo-text">Fresh styles just in</p>
+      <p class="discount">$49.99</p>
+      <button class="promo-button">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-container" id="contact">
+    <div class="footer-section contact-info">
+      <h3>Contact</h3>
+      <p>+263 4 123 456‬ | <a href="mailto:info@bata.co.zw">info@bata.co.zw</a></p>
+    </div>
+    <div class="footer-section store-info">
+      <h3>Stores</h3>
+      <p>Harare | Bulawayo | Mutare</p>
+    </div>
+    <div class="footer-section social-info">
+      <h3>Follow</h3>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/" target="_blank">
+          <img class="social-logo" src="icons/facebook-icon.webp" alt="Facebook">
+          <span>Facebook</span>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank">
+          <img class="social-logo" src="icons/insta.jpg" alt="Instagram">
+          <span>Instagram</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    © 2025 Bata Shoe Company Zimbabwe
+  </div>
+
+  <!-- Cart Script -->
+  <script>
+    let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+    function updateCartCount() {
+      const cartElement = document.getElementById('cart-count');
+      const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+      cartElement.textContent = totalQuantity;
+      cartElement.style.display = totalQuantity > 0 ? 'flex' : 'none';
+    }
+
+    function addPromotionToCart(event) {
+      event.stopPropagation();
+      const productElement = event.currentTarget;
+      const name = productElement.querySelector("h3").innerText;
+      const price = productElement.querySelector(".discount").innerText.replace("Now ", "");
+      const image = productElement.querySelector("img").src;
+
+      const existing = cart.find(item => item.name === name);
+      if (existing) {
+        existing.quantity++;
+      } else {
+        cart.push({ name, price, image, quantity: 1 });
+      }
+
+      sessionStorage.setItem("cart", JSON.stringify(cart));
+      updateCartCount();
+    }
+
+    updateCartCount();
+  </script>
+</body>
+</html>

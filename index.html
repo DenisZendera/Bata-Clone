@@ -1,0 +1,252 @@
+ <!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>
+      Bata Shoe Company
+    </title>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="icon" href="icons/bata-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/slideshow.css">
+    <link rel="stylesheet" href="styles/searchbox.css">
+    <link rel="stylesheet" href="styles/body.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+
+  // Auto slideshow (every 3 seconds)
+  setInterval(function() {
+    plusSlides(1);
+  }, 3000);
+
+</script>
+
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-left">
+        <a href="index.html">
+          <img class="logo" src="logo/bata-logo.png">
+        </a>
+      </div>
+      <div class="header-right">
+        <button>
+          <a class="Home" href="index.html">Home</a>
+        </button>
+        <button>
+          <a class="Products" href="products.html">Products</a>
+        </button>
+        <button>
+          <a class="About" href="about.html">About Us</a>
+        </button>
+        <button>
+          <a class="Store" href="locator.html">Store Locator</a>
+        </button>
+        <button>
+          <a class="Promotions" href="promotions.html">Promotions</a>
+        </button>
+        <button>
+          <a class="Contact" href="#contact">Contact</a>
+        </button>
+       <div class="cart-button" style="font-size: 13.5px;">
+          <a class="Cart" href="cart.html">Cart</a>
+          <div id="cart-count" class="cart-count">0</div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <hr class="header-line">
+
+    <div class="cookie-container">
+    <div class="cookie">
+      <p>Do you want Cookies?</p>
+      <div class="cookie-button">
+        <button>Accept</button>
+        <button>Reject</button>
+      </div>
+    </div>
+  </div>
+
+  
+    <div class="slideshow-section">
+
+      <div class="search-box-container">
+        <input class="search-box" type="text" placeholder="Search">
+        <i class="fa fa-search" style="color: red;"></i>  
+      </div>
+
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="slideshow-images/image1.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="slideshow-images/image2.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="slideshow-images/image3.jpg" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+
+      <div style="text-align:center; position: absolute; bottom: 10px; width: 100%;">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    </div>
+
+  <div class="Featured-Collections">
+    <a class="Products" href="products.html">
+    <p class="featured-collections-title">Featured Collections</p>
+    <div class="featured-collections-templates">
+      <div class="Men-section">
+        <img class="men-image" src="slideshow-images/men.jpg" alt="Men Collection">
+        <div class="collection-text">Men</div>
+      </div>
+      
+      
+      <div class="Women-section">
+        <img class="men-image" src="slideshow-images/women.jpg" alt="Women Collection">
+        <div class="collection-text">Women</div>
+      </div>
+     
+
+      <div class="Kids">
+        <img class="men-image" src="slideshow-images/kids.jpg" alt="Kids Collection">
+        <div class="collection-text">Kids</div>
+      </div>
+    </div>
+ </a>
+  </div> 
+
+  <div class="new-customer-section">
+    <div class="new-customer-content">
+      <p class="discount-text">Get <span style="color:  rgb(207, 2, 2)">10&#x25;</span> off - Join our newsletter</p>
+      <div class="email-section">
+        <input class="new-customer-searchbox" type="email" placeholder="Your email">
+        <button class="subscribe-button">
+          Subscribe
+        </button>
+      </div>
+    </div>  
+  </div>
+
+  <footer class="footer-container" id="contact">
+  <div class="footer-section contact-info">
+    <h3>Contact</h3>
+    <p>+263 4 123 456‬ | <a href="mailto:info@bata.co.zw">info@bata.co.zw</a></p>
+  </div>
+
+  <div class="footer-section store-info">
+    <h3>Stores</h3>
+    <p>Harare | Bulawayo | Mutare</p>
+  </div>
+
+  <div class="footer-section social-info">
+    <h3>Follow</h3>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/" target="_blank">
+        <img class="social-logo" src="icons/facebook-icon.webp" alt="Facebook">
+        <span>Facebook</span>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank">
+        <img class="social-logo" src="icons/insta.jpg" alt="Instagram">
+        <span>Instagram</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  © 2025 Bata Shoe Company Zimbabwe
+</div>
+
+<script>
+
+
+let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+  function updateCartCount() {
+    const cartElement = document.getElementById('cart-count');
+    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartElement.textContent = totalQuantity;
+    cartElement.style.display = totalQuantity > 0 ? 'flex' : 'none';
+  }
+
+  function addToCart(event) {
+    const productElement = event.currentTarget;
+    const name = productElement.querySelector("h3").innerText;
+    const price = productElement.querySelector(".price").innerText;
+    const image = productElement.querySelector("img").src;
+
+    const existing = cart.find(item => item.name === name);
+    if (existing) {
+      existing.quantity++;
+    } else {
+      cart.push({ name, price, image, quantity: 1 });
+    }
+
+    sessionStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+  }
+
+  updateCartCount();
+
+  const cookieContainer = document.querySelector(".cookie-container");
+
+  if (localStorage.getItem("cookieChoice")) {
+    cookieContainer.style.display = "none";
+  }
+
+  document.querySelectorAll(".cookie-button button").forEach(button => {
+    button.addEventListener("click", () => {
+      localStorage.setItem("cookieChoice", button.innerText); 
+      cookieContainer.style.display = "none";
+    });
+  });
+</script>
+
+
+  </body>
+</html>
